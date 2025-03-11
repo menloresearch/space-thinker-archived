@@ -18,7 +18,7 @@ To run the basic setup: franka arm robot with desk, follow these steps:
     ```
 
 ### adding different objects to the scene
-1. Clone the repo that contain many xml 3d object
+1. Clone external repo into folder at the same level as this repo, This includes many 3d objects in xml format, 
     ```sh
     https://github.com/vikashplus/furniture_sim.git
     ```
