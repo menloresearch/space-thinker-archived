@@ -25,9 +25,9 @@ microwave_door = scene.add_entity(
 slide_cabinet = scene.add_entity(
     gs.morphs.MJCF(file='./../furniture_sim/slidecabinet.xml', pos = (0.5, 0.5, 0.15), euler = (0, 0, 0), scale=0.3),
 )
-kettle = scene.add_entity(
-    gs.morphs.MJCF(file='./../furniture_sim/kettle_0.xml', pos = (0.5, -0.5, 0.1), euler = (0, 0, 0), scale=1.0),
-)
+# kettle = scene.add_entity(
+#     gs.morphs.MJCF(file='./../furniture_sim/kettle_0.xml', pos = (0.5, -0.5, 0.1), euler = (0, 0, 0), scale=1.0),
+# )
 if ADD_CAMERA:
     cam = scene.add_camera(
         res    = (640, 480),
