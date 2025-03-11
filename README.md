@@ -22,7 +22,7 @@ To run the basic setup: franka arm robot with desk, follow these steps:
     ```sh
     https://github.com/vikashplus/furniture_sim.git
     ```
-2. change the file path in scene.add_entity() of both microwave_door, slide_cabinet
+2. check the file path in scene.add_entity() of both microwave_door, slide_cabinet
 
 3. Run the script:
     ```sh
