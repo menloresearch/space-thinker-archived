@@ -1,7 +1,5 @@
 ## Pick-place-model
 
-## Pick-place-model
-
 ### Run code
 
 To run the basic setup: franka arm robot with desk, follow these steps:
