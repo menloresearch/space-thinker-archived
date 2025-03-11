@@ -1,5 +1,8 @@
 ## Pick-place-model
 
+## Setup
+- Install Genesis Simulation with OMPL Path Planning library
+
 ### Run code
 
 To run the basic setup: franka arm robot with desk, follow these steps:
