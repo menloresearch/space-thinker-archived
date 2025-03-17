@@ -164,6 +164,10 @@ async def robot_task(request: RobotTaskRequest):
             
         output_text = final_output.outputs[0].text
         discrete_actions = parse_and_convert(output_text)
+        action_7 = discrete_actions[5]
+        action_7[2] = discrete_actions[5][2] - 4
+        discrete_actions[5][-1] = 0
+        discrete_actions.append(action_7)
         
         return RobotTaskResponse(
             actions=discrete_actions,
