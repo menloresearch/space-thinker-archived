@@ -11,6 +11,7 @@ from vllm.engine.arg_utils import AsyncEngineArgs
 from vllm.engine.async_llm_engine import AsyncLLMEngine
 from vllm.sampling_params import SamplingParams
 from vllm.utils import random_uuid
+import copy
 
 app = FastAPI(title="Robot Reasoning API")
 engine = None
@@ -164,10 +165,12 @@ async def robot_task(request: RobotTaskRequest):
             
         output_text = final_output.outputs[0].text
         discrete_actions = parse_and_convert(output_text)
-        action_7 = discrete_actions[5]
-        action_7[2] = discrete_actions[5][2] - 4
-        discrete_actions[5][-1] = 0
+        discrete_actions[5][2] += 1
+        action_7 = copy.deepcopy(discrete_actions[5])
         discrete_actions.append(action_7)
+        discrete_actions[5][-1] = 0
+        # print(discrete_actions[5][-1])
+        # print(action_7)
         
         return RobotTaskResponse(
             actions=discrete_actions,
@@ -213,7 +216,7 @@ if __name__ == "__main__":
     
     parser = argparse.ArgumentParser(description="Robot Reasoning API Server")
     parser.add_argument("--host", type=str, default="0.0.0.0", help="Host to bind the server to")
-    parser.add_argument("--port", type=int, default=8000, help="Port to bind the server to")
+    parser.add_argument("--port", type=int, default=3348, help="Port to bind the server to")
     parser.add_argument("--model", type=str, default="jan-hq/AlphaTable-1.5B", help="Model path or name")
     parser.add_argument("--gpu-memory-utilization", type=float, default=0.9, help="GPU memory utilization")
     parser.add_argument("--max-model-len", type=int, default=8192, help="Maximum model length")

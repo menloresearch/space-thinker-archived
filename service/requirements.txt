@@ -2,4 +2,4 @@ fastapi
 pydantic
 Requests
 uvicorn
-vll
+vllm
