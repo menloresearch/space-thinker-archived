@@ -49,7 +49,7 @@ TASK: {instruction}
 Think step by step about the spatial relationships and analyze the desk map to locate objects, then plan your actions step by step:
 1. Identify the target object's position on the desk map.
 2. Create a plan using natural language instructions that reference object tokens.
-Then output ONLY the action sequence in the required format.
+Then output ONLY the action sequence in the required format.<｜Assistant｜><think>
 """
 
 def tokenize_desk(objects_des: List[Dict[str, List[int]]], grid_size: int = 25) -> tuple:

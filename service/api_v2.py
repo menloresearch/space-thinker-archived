@@ -75,7 +75,7 @@ TASK: {instruction}
 Think step by step about the spatial relationships and analyze the desk map to locate objects, then plan your actions step by step:
 1. Identify the target object's position on the desk map.
 2. Create a plan using natural language instructions that reference object tokens.
-Then output ONLY the action sequence in the required format.
+Then output ONLY the action sequence in the required format.<｜Assistant｜><think>
 """
 
 def tokenize_desk(objects_des, grid_size=25):
@@ -170,6 +170,7 @@ async def process_robot_task(request: RobotTaskRequest) -> Dict:
         # Acquire semaphore to limit concurrent requests
         async with request_semaphore:
             # Format the input using the prompt template
+            print(request.objects)
             desk, object_height = tokenize_desk(request.objects)
             prompt = SYSTEM_PROMPT.format(
                 object_height=object_height,
